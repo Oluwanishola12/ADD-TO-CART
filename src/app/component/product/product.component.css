@@ -1,0 +1,19 @@
+.card-top{
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: white;
+    background-clip: border-box;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 25rem;
+}
+.item{
+    margin-left: -80px;
+    width: 250px;
+}
+.item a:hover{
+    color: red;
+}
