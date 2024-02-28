@@ -33,8 +33,6 @@ emptyCart(){
   this.cartService.removeAllCart();
 }
 
-goShop(){
-  this.router.navigateByUrl('product')
-}
+
 
 }

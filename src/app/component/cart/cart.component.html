@@ -1,4 +1,4 @@
-<ng-container *ngIf="true">
+<ng-container *ngIf="products.length !=0">
 <div class="container">
     <div class="card-table">
         <div class="cart-product">
@@ -20,11 +20,18 @@
             <td>{{i+1}}</td>
             <td>{{item.title}}</td>
             <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
-            <td>{{item.description}}</td>
-            <th>{{item.price}}</th>
-            <td>{{item.quantity}}</td>
-            <td>{{item.total}}</td>
-           <td><button (click)="removeItem(item)" class="btn-danger"><i class="fas fa-trash-alt"></i></button></td>
+            <td style="width: 25%;">{{item.description}}</td>
+            <th style="width: 12%;">{{item.price}}</th>
+            <td style="width: 12%;">{{item.quantity}}</td>
+            <td style="width: 12%;">{{item.total}}</td>
+           <td><button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></td>
+        </tr>
+        <tr>
+            <td colspan="4"></td>
+            <td><button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button></td>
+            <td><button routerLink="/product" class="btn btn-primary">Shop More</button></td>
+            <td><button class="btn btn-success">Check Out</button></td>
+            <td><strong>Grand Total : ${{grandTotal}}</strong></td>
         </tr>
     </tbody>
     </table>
@@ -33,7 +40,7 @@
 </div>
 </ng-container>
 
-<ng-container *ngIf="false">
+<ng-container *ngIf="products.length ==0">
     <div class="container">
         <div class="card">
         <h5 class="card-title">My Cart</h5>
@@ -42,7 +49,7 @@
             <img height="270px" width="300px" src="assets/images/empty.png" alt="">
             <h4>Your Cart Is Empty</h4>
             <h6>Add Item to it NOW!!!</h6>
-            <button (click)="goShop()" class="btn btn-primary">SHOP NOW</button>
+            <button routerLink="/product" class="btn btn-primary">SHOP NOW</button>
         </div>
         </div>
         

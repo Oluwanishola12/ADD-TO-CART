@@ -20,7 +20,7 @@ ngOnInit(): void {
   .subscribe(res=>{
     this.productlist = res;
     this.productlist.forEach((a :any)=>{
-      Object.assign(a, {quatity:1, total:a.price});
+      Object.assign(a, {quantity:1, total:a.price});
     });
   })
 }
