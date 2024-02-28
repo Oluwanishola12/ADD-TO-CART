@@ -1,1 +1,49 @@
-<p>cart works!</p>
+<ng-container *ngIf="true">
+<div class="container">
+    <div class="card-table">
+        <div class="cart-product">
+    <table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>Product Name</th>
+            <th>Product Image</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of products; let i =index">
+            <td>{{i+1}}</td>
+            <td>{{item.title}}</td>
+            <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
+            <td>{{item.description}}</td>
+            <th>{{item.price}}</th>
+            <td>{{item.quantity}}</td>
+            <td>{{item.total}}</td>
+           <td><button (click)="removeItem(item)" class="btn-danger"><i class="fas fa-trash-alt"></i></button></td>
+        </tr>
+    </tbody>
+    </table>
+        </div>
+    </div>
+</div>
+</ng-container>
+
+<ng-container *ngIf="false">
+    <div class="container">
+        <div class="card">
+        <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center">
+            <img height="270px" width="300px" src="assets/images/empty.png" alt="">
+            <h4>Your Cart Is Empty</h4>
+            <h6>Add Item to it NOW!!!</h6>
+            <button (click)="goShop()" class="btn btn-primary">SHOP NOW</button>
+        </div>
+        </div>
+        
+</ng-container>
